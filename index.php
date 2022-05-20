@@ -1,1 +1,4 @@
-?php
+<?php
+require 'bootstrap.php';
+
+router();
