@@ -19,7 +19,8 @@ class Page
         $viewPrincipal = [
             'loading'       => View::render('loading'),
             'view'          =>$view,
-            'viewParameter' =>$parameter
+            'viewParameter' =>$parameter,
+            'server'        =>'http://www.localhost/'
         ];
 
     return View::render('page',$viewPrincipal);
@@ -33,6 +34,14 @@ class Page
 
         return self::viewMain('home',$parameter);
     }
+  private static function clientes(): string
+  {
+    $parameter = [
+      'viewTitle'=>'Clientes'
+    ];
+
+    return self::viewMain('clientes',$parameter);
+  }
 
     private static function errorHttp(): string
     {

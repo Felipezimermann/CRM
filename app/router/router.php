@@ -6,10 +6,6 @@ function routes():array
 {
     return require 'routes.php';
 }
-function routesBootstrap():array
-{
-    return require 'routesBootstrap.php';
-}
 
 function exactMatchUriInArrayRoutes(string $uri,array $routes )
 {
@@ -19,7 +15,10 @@ function exactMatchUriInArrayRoutes(string $uri,array $routes )
         switch ($router){
             case 'Page':
                 return  \app\controllers\Page\Page::getPage($uri);
-            case 'bootstrap':
+            case 'UploadFile':
+              $method = explode('/',$uri) ;
+              return  app\controllers\uploadFile\UploadFile::action($method);
+            case 'public':
                 $file = __DIR__."/../../public".$uri;
                return file_exists($file)?file_get_contents($file):'';
         }
@@ -32,15 +31,16 @@ function router():string
     $uri = $_SERVER["REQUEST_URI"];
     $uriArray = explode('/',$uri) ;
 
-    switch ($uriArray){
+    switch ($uriArray[1]){
         case 'bootstrap';
-            $routes = routesBootstrap();
+        case 'images':
+        case 'js':
+        case 'css':
+            $routes = [$uri=>'public'];
             break;
         default:
             $routes = routes();
             break;
     }
-
-
     return exactMatchUriInArrayRoutes($uri,$routes);
 }

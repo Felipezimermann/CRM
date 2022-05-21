@@ -3,9 +3,8 @@
 $data       = $parameters??'';  //var global
 $parameters = $data['viewParameter']??'';
 $view       = $data['view']??'';
-
+$server       = $data['server']??'';
 $viewTitle  = $parameters['viewTitle']??'';
-
 
 ?>
 <!DOCTYPE html>
@@ -13,33 +12,21 @@ $viewTitle  = $parameters['viewTitle']??'';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{nome}}</title>
+    <title>CRM</title>
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="bootstrap/plugins/dropzone/min/dropzone.min.js"></script>
     <link rel="stylesheet" href="bootstrap/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <link rel="stylesheet" href="bootstrap/plugins/dropzone/min/dropzone.min.css">
-    <script src="bootstrap/plugins/dropzone/min/dropzone.min.js"></script>
-    <!--  &lt;!&ndash; Google Font: Source Sans Pro &ndash;&gt;-->
-    <!--  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">-->
-    <!--  &lt;!&ndash; Font Awesome &ndash;&gt;-->
     <link rel="stylesheet" href="bootstrap/plugins/fontawesome-free/css/all.min.css">
-    <!--  &lt;!&ndash; Ionicons &ndash;&gt;-->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href="bootstrap/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <!--  &lt;!&ndash; iCheck &ndash;&gt;-->
     <link rel="stylesheet" href="bootstrap/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <!--  &lt;!&ndash; JQVMap&ndash;&gt;-->
     <link rel="stylesheet" href="bootstrap/plugins/jqvmap/jqvmap.min.css">
-    <!--  &lt;!&ndash; Theme style &ndash;&gt;-->
     <link rel="stylesheet" href="bootstrap/dist/css/adminlte.min.css">
-    <!--  &lt;!&ndash; overlayScrollbars &ndash;&gt;-->
     <link rel="stylesheet" href="bootstrap/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <!--  &lt;!&ndash; Daterange picker &ndash;&gt;-->
     <link rel="stylesheet" href="bootstrap/plugins/daterangepicker/daterangepicker.css">
-    <!--  &lt;!&ndash; summernote &ndash;&gt;-->
     <link rel="stylesheet" href="bootstrap/plugins/summernote/summernote-bs4.min.css">
-    <!--  &lt;!&ndash; toastr  alerta personalizado &ndash;&gt;-->
     <link rel="stylesheet" href="bootstrap/plugins/toastr/toastr.min.css">
 
 </head>
@@ -48,8 +35,8 @@ $viewTitle  = $parameters['viewTitle']??'';
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="./dist/img/logo_ziit.png" alt="AdminLTELogo" height="120" width="120">
-        <div style="color: #29762f;">Carregando <img src="./dist/img/loading_verde.gif" style=""></div>
+        <img class="animation__shake" src="../images/crmLogo.jpg" alt="AdminLTELogo" height="120" width="150">
+        <div style="color: #29762f;">Carregando...</div>
 
     </div>
 
@@ -58,10 +45,10 @@ $viewTitle  = $parameters['viewTitle']??'';
         <!-- links do menu  -->
         <ul class="navbar-nav">
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#"  class="nav-link">{{nome}}</a>
+                <a href="/"  class="nav-link">Inicio</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href='' class="nav-link">Intranet</a>
+                <a href='/contato' class="nav-link">Contato</a>
             </li>
         </ul>
     </nav>
@@ -71,8 +58,8 @@ $viewTitle  = $parameters['viewTitle']??'';
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="index.php" class="brand-link">
-            <img src="./dist/img/logo_ziit.png" alt="ziit Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Clamed</span>
+            <img src="../images/Logotipo-CRM.webp" alt="ziit Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">CRM</span>
         </a>
 
         <!-- Sidebar -->
@@ -81,10 +68,10 @@ $viewTitle  = $parameters['viewTitle']??'';
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
 
-                    <img width="215px" height="215px" src="" class="img-circle elevation-2" alt="User Image">
+                    <img style="width:57px;height:46px" src="../images/perfil-foto.png" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="./index.php" class="d-block"></a>
+                    <a href="./" class="d-block">Felipe zimermann</a>
                 </div>
 
             </div>
@@ -93,7 +80,7 @@ $viewTitle  = $parameters['viewTitle']??'';
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- menu lateral -->
                     <li class="nav-item">
-                        <a href="index.php?" class="nav-link">
+                        <a href="/" class="nav-link">
                             <i class="nav-icon fas fa-home"></i>
                             <p>
                                 Home
@@ -176,10 +163,10 @@ $viewTitle  = $parameters['viewTitle']??'';
 </div>
 <!-- /.content-wrapper -->
 <footer class="main-footer">
-    <strong>Copyright &copy; 2021-2022 <a href="">Clamed</a>.</strong>
+    <strong>Copyright &copy; 2022-2022 <a href="">CRM</a>.</strong>
 
     <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 1.3.0
+        <b>Version</b> 1.0.0
     </div>
 </footer>
 
@@ -210,6 +197,7 @@ $viewTitle  = $parameters['viewTitle']??'';
 <script src="bootstrap/dist/js/adminlte.js"></script>
 <script src="bootstrap/dist/js/demo.js"></script>
 <script src="bootstrap/dist/js/adminlte.min.js"></script>
+<script src="bootstrap/plugins/toastr/toastr.min.js"></script>
 
 </body>
 </html>
