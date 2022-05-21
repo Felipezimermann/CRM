@@ -208,9 +208,9 @@
         cache: false,
         contentType: false,
         success: function (data) {
-          alerta('ok');
+          alert('ok a');
         },
-        error: function (request, status, error) {
+        error: function (request) {
           alert(request.responseText);
         }
       });
