@@ -19,9 +19,17 @@ class ConnectBank
     return $connection;
   }
 
-  public function connect($sql)
+  public function connect(string $sql,bool $operation = false)
   {
     $connection = self::start();
+
+    if($operation){
+      if(mysqli_query($connection,"$sql")){
+        return true;
+      }else{
+        return false;
+      }
+    }
 
     $sql = mysqli_query($connection,"$sql");
     $response = mysqli_fetch_assoc($sql);

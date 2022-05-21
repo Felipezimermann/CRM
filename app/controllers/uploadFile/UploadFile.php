@@ -9,7 +9,7 @@ class UploadFile
   {
     return self::{$method[2]}();
   }
-  private static function customerImport()
+  private static function customerImport(): string
   {
     $file = $_FILES['file'];
     return User::newUser(FileReader::read($file['tmp_name'],',',9));
