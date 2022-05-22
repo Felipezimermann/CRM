@@ -25,3 +25,7 @@ No desafio foi passado algum pontos que eu tinha que me preocupar no desenvolvim
 Infelizmente tive problemas com o wsl então no projeto não passei o Docker com as configurações para criar os contêineres pois não teria como testar se tudo iria funcionar corretamente  
 Então utilizei o xampp para rodar o projeto o banco que usei foi do próprio xampp mysql
 Para roda o projeto basta jogar dentro da pasta htdocs do apache e no banco basta criar um schema como o nome crm, na raiz do projeto tem um scrip.sql para roda e importar as tabelas 
+
+<h4 align="center"> 
+	🚧  CRM 🚀 Finalizado  🚧
+</h4>
