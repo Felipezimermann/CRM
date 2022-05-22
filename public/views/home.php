@@ -24,12 +24,12 @@
           <!-- small box -->
           <div  style="width: 288px;background-color: #6f4fc5!important;" class="small-box bg-info">
             <div style="height: 99px;" class="inner">
-              <h5>Gráficos</h5>
+              <h5>Relatórios</h5>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="/graficos"   class="small-box-footer">Gráficos <i class="fas fa-arrow-circle-right" ></i></a>
+            <a href="/graficos"   class="small-box-footer">Relatórios <i class="fas fa-arrow-circle-right" ></i></a>
           </div>
         </div>
       </div>

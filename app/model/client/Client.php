@@ -104,4 +104,10 @@ class Client
 
     return json_encode(array('pagina'=>$pagination,'listaClients'=>$listClients));
   }
+
+  function customerReport()
+  {
+
+  }
+
 }

@@ -2,6 +2,7 @@
 
 namespace app\controllers\Page;
 use app\utils\View;
+use app\controllers\client\Client;
 class Page
 {
     public static function getPage($uri): string
@@ -20,7 +21,6 @@ class Page
             'loading'       => View::render('loading'),
             'view'          =>$view,
             'viewParameter' =>$parameter,
-            'server'        =>'http://www.localhost/'
         ];
 
     return View::render('page',$viewPrincipal);
@@ -44,8 +44,10 @@ class Page
   }
   private static function graficos(): string
   {
+
     $parameter = [
-      'viewTitle'=>'Gráficos'
+      'viewTitle'=>'Relatórios',
+      'viewParameter' => Client::action(['customerReport'],false)
     ];
 
     return self::viewMain('graficos',$parameter);

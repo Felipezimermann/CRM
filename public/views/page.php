@@ -3,8 +3,8 @@
 $data       = $parameters??'';  //var global
 $parameters = $data['viewParameter']??'';
 $view       = $data['view']??'';
-$server       = $data['server']??'';
 $viewTitle  = $parameters['viewTitle']??'';
+//$render     =
 
 ?>
 <!DOCTYPE html>
@@ -88,7 +88,7 @@ $viewTitle  = $parameters['viewTitle']??'';
                               <i class="nav-icon "></i>
                             <i class="ion ion-stats-bars"></i>
                               <p style="margin-left: 7px">
-                                  Gráficos
+                                Relatórios
                               </p>
                           </a>
                       </li>
@@ -99,14 +99,6 @@ $viewTitle  = $parameters['viewTitle']??'';
                               <p class="text">Sair</p>
                           </a>
                       </li>
-                      <ul class="nav nav-treeview">
-                          <li class="nav-item">
-                              <a href="pages/UI/general.html" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>General</p>
-                              </a>
-                          </li>
-                      </ul>
                       </li>
                   </ul>
               </nav>
