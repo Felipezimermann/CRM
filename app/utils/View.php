@@ -5,7 +5,7 @@ class View
 {
     private  static function renderSubcontext(array &$parameters){
 
-      $view = $parameters['view']??die('informar qual é a view');
+      $view = $parameters['view']??'';
 
       $file = __DIR__."/../../public/views/$view.html";
       $subcontext = file_exists($file)?file_get_contents($file):'';

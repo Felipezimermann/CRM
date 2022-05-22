@@ -54,9 +54,11 @@ class Page
 
     private static function errorHttp(): string
     {
-        $parameter = [
-            'viewTitle'=>'404'
-        ];
-        return self::viewMain('404',$parameter);
+      $viewPrincipal = [
+        'loading'       => View::render('loading'),
+      ];
+
+      return View::render('404error',$viewPrincipal);
+        //return self::viewMain('404',$parameter);
     }
 }
