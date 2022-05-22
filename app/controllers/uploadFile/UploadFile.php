@@ -1,7 +1,7 @@
 <?php
 namespace app\controllers\uploadFile;
 use app\model\excel\FileReader;
-use app\model\user\User;
+use app\model\client\Client;
 
 class UploadFile
 {
@@ -12,7 +12,7 @@ class UploadFile
   private static function customerImport(): string
   {
     $file = $_FILES['file'];
-    return User::newUser(FileReader::read($file['tmp_name'],',',9));
+    return Client::newClient(FileReader::read($file['tmp_name'],',',9));
   }
 
 }

@@ -31,10 +31,11 @@ class ConnectBank
       }
     }
 
-    $sql = mysqli_query($connection,"$sql");
-    $response = mysqli_fetch_assoc($sql);
-    mysqli_close($connection);
-    return $response;
+    $statement = $connection->prepare($sql);
+    $statement->execute();
+    $result = $statement->get_result();
+    $connection->close();
+    return $result;
   }
 
 

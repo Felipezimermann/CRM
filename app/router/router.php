@@ -18,6 +18,9 @@ function exactMatchUriInArrayRoutes(string $uri,array $routes )
             case 'UploadFile':
               $method = explode('/',$uri) ;
               return  app\controllers\uploadFile\UploadFile::action($method);
+            case 'Client':
+              $method = explode('/',$uri) ;
+              return  app\controllers\client\Client::action($method);
             case 'public':
                 $file = __DIR__."/../../public".$uri;
                return file_exists($file)?file_get_contents($file):'';

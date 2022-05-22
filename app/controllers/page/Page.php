@@ -42,6 +42,14 @@ class Page
 
     return self::viewMain('clientes',$parameter);
   }
+  private static function graficos(): string
+  {
+    $parameter = [
+      'viewTitle'=>'Gráficos'
+    ];
+
+    return self::viewMain('graficos',$parameter);
+  }
 
     private static function errorHttp(): string
     {
