@@ -1,0 +1,203 @@
+<div class="card">
+  <div class="card-header border-0">
+    <h3 class="card-title">Informações Gerais</h3>
+    <div class="card-tools">
+      <a href="#" class="btn btn-sm btn-tool">
+        <i class="fas fa-download"></i>
+      </a>
+      <a href="#" class="btn btn-sm btn-tool">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  <div class="card-body">
+    <!--    ini-->
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p class="text-center">
+            <strong>{{data}}</strong>
+          </p>
+          <div style="
+    display: flex;
+    gap: 74px;
+    justify-content: center;
+    margin-top: 69px;">
+            <div style="
+      background: #007bff;;
+      padding: 10px;
+      width: 120px;
+      border-radius: 50%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;" >
+              <div style="
+        display: flex;
+        flex-direction: column;
+        gap: 9px;">
+                <span>{{ttClientes}}</span>
+                <div>Clientes</div>
+              </div>
+            </div>
+            <div style="
+      background: #28a745;
+      padding: 10px;
+      width: 120px;
+      border-radius: 50%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;">
+              <div style="
+        display: flex;
+        flex-direction: column;
+        gap: 9px;">
+                <span>{{ttCompleto}}</span>
+                <div>Perfis Completo</div>
+              </div>
+            </div>
+            <div style="
+      background: #dc3545;;
+      padding: 10px;
+      width: 120px;
+      border-radius: 50%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;">
+              <div style="
+        display: flex;
+        flex-direction: column;
+        gap: 9px;">
+                <span>{{ttIncompleto}}</span>
+                <div>Perfil Incompleto</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <p class="text-center">
+            <strong>Informações</strong>
+          </p>
+          <div class="progress-group">
+            Quantidade de clientes com sobrenome
+            <span class="float-right"><b>{{ttSobrenome}}</b>/{{ttClientes}}</span>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-primary" {{ttSobrenome_percentage}}></div>
+            </div>
+          </div>
+          <div class="progress-group">
+            Quantidade de clientes sem sobrenome
+            <span class="float-right"><b>{{ttsSobrenome}}</b>/{{ttClientes}}</span>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-danger" {{ttsSobrenome_percentage}}></div>
+            </div>
+          </div>
+          <div class="progress-group">
+            <span class="progress-text">Quantidade de clientes com email válido</span>
+            <span class="float-right"><b>{{ttEmail}}</b>/{{ttClientes}}</span>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-success" {{ttEmail_percentage}}></div>
+            </div>
+          </div>
+          <div class="progress-group">
+            Quantidade de clientes com email inválido
+            <span class="float-right"><b>{{ttsEmail}}</b>/{{ttClientes}}</span>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-warning" {{ttsEmail_percentage}}></div>
+            </div>
+          </div>
+          <div class="progress-group">
+            Quantidade de clientes com gênero
+            <span class="float-right"><b>{{ttGenero}}</b>/{{ttClientes}}</span>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-warning" {{ttGenero_percentage}}></div>
+            </div>
+          </div>
+          <div class="progress-group">
+            Quantidade de clientes sem gênero
+            <span class="float-right"><b>{{ttsGenero}}</b>/{{ttClientes}}</span>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-warning" {{ttsGenero_percentage}}></div>
+            </div>
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!--    fim-->
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-header border-0">
+    <h3 class="card-title">Informações dos Clientes</h3>
+    <div class="card-tools">
+      <a href="#" class="btn btn-sm btn-tool">
+        <i class="fas fa-download"></i>
+      </a>
+      <a href="#" class="btn btn-sm btn-tool">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+      <p class="text-success text-xl">
+        <i class="fas fa-user"></i>
+      </p>
+      <p class="d-flex flex-column text-right">
+                    <span class="font-weight-bold">
+                      <i class="ion ion-android-arrow-up text-success"></i> {{nmDiferente}}
+                    </span>
+        <span class="text-muted">Total de clientes com o nome diferente</span>
+      </p>
+    </div>
+    <!-- /.d-flex -->
+    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+      <p class="text-warning text-xl">
+        <i class="far fa-chart-bar"></i>
+      </p>
+      <p class="d-flex flex-column text-right">
+                    <span class="font-weight-bold">
+                      <i class="ion ion-android-arrow-up text-warning"></i> {{cityDiferente}}
+                    </span>
+        <span class="text-muted">Total de clientes com cidades diferente</span>
+      </p>
+    </div>
+    <!-- /.d-flex -->
+    <div class="d-flex justify-content-between align-items-center mb-0">
+      <p class="text-danger text-xl">
+        <i class="ion ion-ios-people-outline"></i>
+      </p>
+      <p class="d-flex flex-column text-right">
+                    <span class="font-weight-bold">
+                      <i class="ion ion-android-arrow-down text-danger"></i> {{male}}
+                    </span>
+        <span class="text-muted">publico do gênero masculino</span>
+      </p>
+    </div>
+    <div class="d-flex justify-content-between align-items-center mb-0">
+      <p class="text-danger text-xl">
+        <i class="ion ion-ios-people-outline"></i>
+      </p>
+      <p class="d-flex flex-column text-right">
+                    <span class="font-weight-bold">
+                       <i class="ion ion-android-arrow-up text-success"></i> {{Female}}
+                    </span>
+        <span class="text-muted">publico do gênero Feminino</span>
+      </p>
+    </div>
+    <!-- /.d-flex -->
+  </div>
+</div>
+
+
+
+

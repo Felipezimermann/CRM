@@ -44,7 +44,6 @@ class Page
   }
   private static function graficos(): string
   {
-
     $parameter = [
       'viewTitle'=>'Relatórios',
       'viewParameter' => Client::action(['customerReport'],false)

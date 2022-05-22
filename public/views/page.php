@@ -1,11 +1,8 @@
 <?php
-
-$data       = $parameters??'';  //var global
+$data       = $parameters??'';
 $parameters = $data['viewParameter']??'';
-$view       = $data['view']??'';
+$render     = $data['view']??'';
 $viewTitle  = $parameters['viewTitle']??'';
-//$render     =
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -122,7 +119,7 @@ $viewTitle  = $parameters['viewTitle']??'';
                   </div>
               </div>
           </div>
-          <?php require_once "$view.php"?>
+          <?php echo $render ?>
       </div>
   </div>
   <footer class="main-footer">

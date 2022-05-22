@@ -92,9 +92,6 @@ class Client
       array_push($listClients,$value);
     }
 
-
-
-
     $pagination = array(
       "Paginas"        =>$tp,
       'pg_anterios'    =>$anterior,
@@ -107,7 +104,75 @@ class Client
 
   function customerReport()
   {
+    $information = [];
+    $response = ConnectBank::Connect("select count(id) as ttClientes from client");
+    foreach ($response as $key=>$value){
+      $information['ttClientes'] = $value['ttClientes'];
+    }
+    $response = ConnectBank::Connect("select count(id) as ttCompleto from client
+    where
+          last_name <> ''and
+          email <> '' and
+          gender <> ''and
+          ip_address <> '' and
+          company <> '' and
+          client.city <> '' and
+          client.title <> '' and
+          client.website <> '';");
+    foreach ($response as $key=>$value){
+      $information['ttCompleto'] = $value['ttCompleto'];
+    }
+    $information['ttIncompleto'] = $information['ttClientes'] - $information['ttCompleto'];
 
+    $response = ConnectBank::Connect("select count(id) as ttGenero from client where gender <> ''");
+    foreach ($response as $key=>$value){
+      $information['ttGenero'] = $value['ttGenero'];
+    }
+
+    $information['ttsGenero'] = $information['ttClientes'] - $information['ttGenero'];
+
+    $response = ConnectBank::Connect("select count(id) as ttEmail from client where email <> ''");
+    foreach ($response as $key=>$value){
+      $information['ttEmail'] = $value['ttEmail'];
+    }
+
+    $information['ttsEmail'] = $information['ttClientes'] - $information['ttEmail'];
+
+    $response = ConnectBank::Connect("select count(id) as ttSobrenome from client where last_name <> ''");
+    foreach ($response as $key=>$value){
+      $information['ttSobrenome'] = $value['ttSobrenome'];
+    }
+
+    $information['ttsSobrenome'] = $information['ttClientes'] - $information['ttSobrenome'];
+
+    foreach ($information as$key=>$value){
+      $id = $key.'_percentage';
+      $valor_base = $information['ttClientes'];
+      $valor = $value;
+      if($valor){
+        $resultado = ($valor / $valor_base) * 100;
+      }else{
+        $resultado = 0;
+      }
+      $resultado = intval($resultado);
+
+      $information["$id"] = "style='width: $resultado%'";
+    }
+
+    $response = ConnectBank::Connect("select distinct first_name from client");
+    $information['nmDiferente'] =  $response->num_rows;
+
+    $response = ConnectBank::Connect("select distinct city from client");
+    $information['cityDiferente'] =  $response->num_rows;
+
+    $response = ConnectBank::Connect("select gender from client where gender like 'M%'");
+    $information['male'] =  $response->num_rows;
+
+    $response = ConnectBank::Connect("select gender from client where gender like 'F%'");
+    $information['Female'] =  $response->num_rows;
+
+    $information['data'] = date('d/m/Y');
+    return $information;
   }
 
 }
