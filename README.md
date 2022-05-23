@@ -16,7 +16,7 @@ No desafio foi passado algum pontos que eu tinha que me preocupar no desenvolvim
 ## 📁 Acesso ao projeto
 
 - Para ter acesso ao projeto basta baixa ele aqui mesmo do meu github 
-- Na raiz do projeto existe um arquivo com o nome de scrip.sql onde tem o scrip que precisar ser rodado no bando para  criação de tabela 
+- Na raiz do projeto existe um arquivo com o nome de scrip.sql onde tem o scrip que precisar ser rodado no banco para  criação de tabela 
 - E também tem um arquivo chamado custimer.csv onde tem os dados dos clientes para serem importado pela aplicação na hora de faze os cadastro de clientes 
 
 
