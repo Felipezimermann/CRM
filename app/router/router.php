@@ -1,6 +1,8 @@
 <?php
 
-
+use \app\controllers\Page\Page;
+use app\controllers\uploadFile\UploadFile;
+use app\controllers\client\Client;
 
 function routes():array
 {
@@ -14,19 +16,19 @@ function exactMatchUriInArrayRoutes(string $uri,array $routes )
         $router = $routes[$uri];
         switch ($router){
             case 'Page':
-                return  \app\controllers\Page\Page::getPage($uri);
+                return  Page::getPage($uri);
             case 'UploadFile':
               $method = explode('/',$uri) ;
-              return  app\controllers\uploadFile\UploadFile::action($method);
+              return  UploadFile::action($method);
             case 'Client':
               $method = explode('/',$uri) ;
-              return  app\controllers\client\Client::action($method);
+              return  Client::action($method);
             case 'public':
                 $file = __DIR__."/../../public".$uri;
-               return file_exists($file)?file_get_contents($file):'';
+               return file_exists($file)?file_get_contents($file):Page::getPage('errorHttp');;
         }
     }
-    return \app\controllers\Page\Page::getPage('errorHttp');
+    return Page::getPage('errorHttp');
 }
 
 function router():string
